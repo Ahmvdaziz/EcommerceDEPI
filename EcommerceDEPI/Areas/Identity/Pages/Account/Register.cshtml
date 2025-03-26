@@ -1,0 +1,98 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<style>
+    body {
+        background: white;
+        color: #333;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .card {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    input.form-control {
+        background: white;
+        border: 1px solid #ced4da;
+        color: #495057;
+    }
+
+        input.form-control::placeholder {
+            color: #6c757d;
+            opacity: 1;
+        }
+
+    .btn-primary {
+        background: #007bff;
+        border: none;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+</style>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="row w-100 justify-content-center">
+        <div class="col-md-6 animate__animated animate__fadeInDown">
+            <div class="card p-4">
+                <h2 class="text-center mb-4">Create a New Account</h2>
+                <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.FullName" class="form-control" placeholder="Full Name" required />
+                        <label asp-for="Input.FullName">Full Name</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Email" class="form-control" autocomplete="username" placeholder="name@example.com" required />
+                        <label asp-for="Input.Email">Email</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Password" class="form-control" autocomplete="new-password" placeholder="Password" required />
+                        <label asp-for="Input.Password">Password</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" placeholder="Confirm Password" required />
+                        <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Phone Number" required />
+                        <label asp-for="Input.PhoneNumber">Phone Number</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Address" class="form-control" placeholder="Address" required />
+                        <label asp-for="Input.Address">Address</label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Input.ProfilePicture" class="form-label">Profile Picture</label>
+                        <input asp-for="Input.ProfilePicture" class="form-control" type="file" accept=".jpg,.png" required />
+                    </div>
+
+                    <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
