@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using EcommerceDEPI.Models;
 
 namespace EcommerceDEPI.Areas.Identity.Pages.Account
 {
@@ -88,14 +89,12 @@ namespace EcommerceDEPI.Areas.Identity.Pages.Account
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
-
-
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
                 user.Name = Input.FullName;
                 user.PhoneNumber = Input.PhoneNumber;
-                user.JoinDate = DateTime.UtcNow; // ✅ يتم تعيين التاريخ الحالي تلقائيًا
+                user.JoinDate = DateTime.UtcNow;
                 user.Address = Input.Address;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
@@ -136,9 +135,18 @@ namespace EcommerceDEPI.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    return RedirectToPage("/Account/Login", new { area = "Identity" });
+                    //  Assign Role Based on Condition
+                    string role = Input.Email.EndsWith("@admin.com") ? "Admin" : "User";
+                    if (await _userManager.IsInRoleAsync(user, role) == false)
+                    {
+                        await _userManager.AddToRoleAsync(user, role);
+                    }
 
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+
+                    return RedirectToPage("/Account/Login", new { area = "Identity" });
                 }
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);

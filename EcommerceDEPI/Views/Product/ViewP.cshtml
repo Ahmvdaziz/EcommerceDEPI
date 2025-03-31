@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using EcommerceDEPI.Models;
+
+@{
+    var pros = ViewData["pros"] as List<Product>;
+}
+
+<a asp-controller="Product" asp-action="Create">Create a Product</a>
+
+<table>
+    <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Amount</th>
+    <th>Price</th>
+    <th colspan="2">Actions</th>
+    </thead>
+    <tbody>
+        @foreach (var p in pros)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Amount</td>
+                <td>@p.Price</td>
+                <td>
+                    <a asp-controller="Product" asp-action="Edit" asp-route-pID="@p.Id">Edit</a>
+                </td>
+                <td>
+                    <a asp-controller="Product" asp-action="Delete" asp-route-pID="@p.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

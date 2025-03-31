@@ -13,9 +13,10 @@ namespace EcommerceDEPI.Controllers
             _logger = logger;
         }
 
+        
         public IActionResult Index()
         {
-            return View();
+             return View();
         }
 
         public IActionResult Privacy()

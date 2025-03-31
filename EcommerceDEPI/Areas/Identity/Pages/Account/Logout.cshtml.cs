@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using EcommerceDEPI.Models;
 using Microsoft.Extensions.Logging;
 
 namespace EcommerceDEPI.Areas.Identity.Pages.Account

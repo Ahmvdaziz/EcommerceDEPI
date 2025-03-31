@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
+using EcommerceDEPI.Models;
+
 
 namespace EcommerceDEPI.Areas.Identity.Pages.Account
 {

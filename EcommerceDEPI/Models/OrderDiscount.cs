@@ -1,8 +1,14 @@
-﻿public class OrderDiscount
+﻿namespace EcommerceDEPI.Models
 {
-    public int OrderId { get; set; }
-    public Order Order { get; set; }
+    using System.ComponentModel.DataAnnotations.Schema;
 
-    public int DiscountId { get; set; }
-    public Discount Discount { get; set; }
+    public class OrderDiscount
+    {
+        public int OrderId { get; set; }
+        public Order Order { get; set; }
+
+        public int DiscountId { get; set; }
+        public Discount Discount { get; set; }
+    }
+
 }

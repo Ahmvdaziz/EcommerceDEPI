@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using EcommerceDEPI.Models;
+
 using Microsoft.AspNetCore.WebUtilities;
 
 namespace EcommerceDEPI.Areas.Identity.Pages.Account

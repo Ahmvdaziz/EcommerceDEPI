@@ -17,6 +17,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using EcommerceDEPI.Models;
+
 
 namespace EcommerceDEPI.Areas.Identity.Pages.Account
 {

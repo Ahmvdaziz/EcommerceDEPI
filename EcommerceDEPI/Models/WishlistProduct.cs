@@ -1,8 +1,13 @@
-﻿public class WishlistProduct
+﻿namespace EcommerceDEPI.Models
 {
-    public int WishlistId { get; set; }
-    public Wishlist Wishlist { get; set; }
+    using System.ComponentModel.DataAnnotations.Schema;
 
-    public int ProductId { get; set; }
-    public Product Product { get; set; }
+    public class WishlistProduct
+    {
+        public int WishlistId { get; set; }
+        public Wishlist Wishlist { get; set; }
+
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
+    }
 }

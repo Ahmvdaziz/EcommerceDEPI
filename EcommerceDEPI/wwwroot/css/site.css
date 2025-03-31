@@ -20,3 +20,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+table {
+    width: 100%;
+    background-color: #cfcbcb;
+}
+
+thead {
+    background-color: #5cabba;
+}
+
+th {
+    padding: 10px;
+}

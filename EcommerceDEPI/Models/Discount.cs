@@ -1,16 +1,21 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-public class Discount
+namespace EcommerceDEPI.Models
 {
-    [Key]
-    public int Id { get; set; }
+    using System.ComponentModel.DataAnnotations.Schema;
 
-    [Required]
-    public string Code { get; set; }
+    public class Discount
+    {
+        [Key]
+        public int Id { get; set; }
 
-    public decimal Amount { get; set; }
+        [Required]
+        public string Code { get; set; }
 
-    public ICollection<Order> Orders { get; set; } = new List<Order>();
-    public ICollection<OrderDiscount> OrderDiscounts { get; set; } = new List<OrderDiscount>();
+        public decimal Amount { get; set; }
 
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public ICollection<OrderDiscount> OrderDiscounts { get; set; } = new List<OrderDiscount>();
+
+    }
 }
