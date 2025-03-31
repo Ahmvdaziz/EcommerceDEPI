@@ -16,11 +16,24 @@ namespace EcommerceDEPI.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+       public IActionResult Index()
+{
+    var products = _context.Products.Include(p => p.Category).ToList();
+    return View(products); // تمرير IEnumerable<Product> إلى View
+}
 
+
+public IActionResult Details(int id)
+{
+    var product = _context.Products
+        .Include(p => p.Category)
+        .FirstOrDefault(p => p.Id == id);
+
+    if (product == null)
+        return NotFound();
+
+    return View(product);
+}
 
         [HttpGet]
         public IActionResult Create()
