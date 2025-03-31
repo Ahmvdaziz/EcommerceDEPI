@@ -1,0 +1,45 @@
+﻿@using EcommerceDEPI.Models  <!-- ✅ أضف هذا السطر في الأعلى -->
+@model IEnumerable<Product>
+<h2 class="mb-4">Products</h2>
+
+<!-- Search Box -->
+<input type="text" id="searchBox" class="form-control mb-4" placeholder="Search for products...">
+
+<div class="row" id="productList">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4 product-item">
+            <div class="card mb-4">
+                <img src="~/images/@(string.IsNullOrEmpty(product.Picture) ? "default.jpg" : product.Picture)"
+                     class="card-img-top" alt="@product.Name" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">@product.Description</p>
+                    <p class="text-primary"><strong>Price:</strong> $@product.Price</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="@Url.Action("Details", "Product", new { id = product.Id })" class="btn btn-info">Details</a>
+                        <a href="#" class="btn btn-success">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    document.getElementById("searchBox").addEventListener("keyup", function () {
+        let searchValue = this.value.toLowerCase();
+        let products = document.querySelectorAll(".product-item");
+
+        products.forEach(product => {
+            let name = product.querySelector(".card-title").textContent.toLowerCase();
+            let description = product.querySelector(".card-text").textContent.toLowerCase();
+
+            if (name.includes(searchValue) || description.includes(searchValue)) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+</script>
