@@ -3,7 +3,32 @@
 *@
 @{
 }
+<style>
+    body {
+        margin: 0 !important;
+    }
 
-<a asp-controller="Category" asp-action="ViewC">Categories</a>
+    .container {
+        margin: 0;
+        padding: 0;
+        height: 90vh;
+        width: 100%;
+        max-width: none !important;
+        padding: 0 5%;
+    }
 
-<a asp-controller="Product" asp-action="ViewP">Products</a>
+    nav {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 10vh !important;
+    }
+
+    footer {
+        height: 10%;
+    }
+</style>
+<div class="controls">
+    <a asp-controller="Category" asp-action="ViewC">Categories</a>
+
+    <a asp-controller="Product" asp-action="ViewP">Products</a>
+</div>

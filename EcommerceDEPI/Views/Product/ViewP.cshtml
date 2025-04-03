@@ -7,7 +7,38 @@
     var pros = ViewData["pros"] as List<Product>;
 }
 
-<a asp-controller="Product" asp-action="Create">Create a Product</a>
+<a class="create-button"  asp-controller="Product" asp-action="Create">Create a Product</a>
+
+<style>
+    body {
+        margin: 0 !important;
+    }
+
+    .container {
+        margin: 0;
+        padding: 0;
+        height: 90vh;
+        width: 100%;
+        max-width: none !important;
+        padding: 0 5%;
+    }
+
+    nav {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 10vh !important;
+    }
+
+    main.pb-3 {
+        padding: 0 !important;
+        height: 100%;
+        width: 100%;
+    }
+
+    footer {
+        height: 10%;
+    }
+</style>
 
 <table>
     <thead>

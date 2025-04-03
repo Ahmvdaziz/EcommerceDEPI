@@ -18,14 +18,14 @@ namespace EcommerceDEPI.Controllers
 
        public IActionResult Index()
 {
-    var products = _context.Products.Include(p => p.Category).ToList();
+    var products = _db.Products.Include(p => p.Category).ToList();
     return View(products); // تمرير IEnumerable<Product> إلى View
 }
 
 
 public IActionResult Details(int id)
 {
-    var product = _context.Products
+    var product = _db.Products
         .Include(p => p.Category)
         .FirstOrDefault(p => p.Id == id);
 

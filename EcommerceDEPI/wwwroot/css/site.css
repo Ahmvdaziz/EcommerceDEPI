@@ -18,18 +18,51 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 0 !important;
+    background-color: #f8f1ff;
+    align-items: stretch !important;
+    flex-direction: column !important;
 }
+
 
 table {
     width: 100%;
     background-color: #cfcbcb;
+    margin-top: 2%;
 }
 
 thead {
-    background-color: #5cabba;
+    background-color: blueviolet;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+tbody td {
+    text-align: center;
+    font-weight: bold;
+}
+
+tbody a {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid #6366f1;
+    color: black;
 }
 
 th {
     padding: 10px;
+}
+
+nav {
+    background-color: #6366f1 !important;
+    box-shadow: 2px 2px 2px #b1b8c1;
+}
+
+nav a {
+    color: white !important;
+}
+
+a.nav-link.text-dark {
+    color: white !important;
 }

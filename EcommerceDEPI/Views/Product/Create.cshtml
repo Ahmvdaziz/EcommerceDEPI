@@ -6,6 +6,37 @@
 }
 @model EcommerceDEPI.Models.Product;
 
+<style>
+    body {
+        margin: 0 !important;
+    }
+
+    .container {
+        margin: 0;
+        padding: 0;
+        height: 90vh;
+        width: 100%;
+        max-width: none !important;
+        padding: 0 5%;
+    }
+
+    main.pb-3 {
+        padding: 0 !important;
+        height: 100%;
+        width: 100%;
+    }
+
+    nav {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 10vh !important;
+    }
+
+    footer {
+        height: 10%;
+    }
+</style>
+<div class="form">
 
 <form asp-controller="Product" asp-action="Create" method="post">
     <div>
@@ -45,3 +76,5 @@
 
     <button type="submit">Create</button>
 </form>
+
+</div>

@@ -6,7 +6,38 @@
     var cats = ViewData["cats"] as List<Category>;
 }
 
-<a asp-controller="Category" asp-action="Create">Create a Category</a>
+<style>
+    body {
+        margin: 0 !important;
+    }
+
+    .container {
+        margin: 0;
+        padding: 0;
+        height: 90vh;
+        width: 100%;
+        max-width: none !important;
+        padding: 0 5%;
+    }
+
+    main.pb-3 {
+        padding: 0 !important;
+        height: 100%;
+        width: 100%;
+    }
+
+    nav {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 10vh !important;
+    }
+
+    footer {
+        height: 10%;
+    }
+</style>
+
+<a class="create-button" asp-controller="Category" asp-action="Create">Create a Category</a>
 
 <table>
     <thead>
