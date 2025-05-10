@@ -1,0 +1,278 @@
+
+/* === General Layout === */
+.controls {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--c-background-color);
+    color: var(--c-text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    /* === Section Containers === */
+    .controls > div {
+        background-color: var(--c-card-background);
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px var(--c-shadow-color);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+        /* === Buttons and Links === */
+        .controls > div > a {
+            background-color: var(--c-button-background);
+            color: var(--c-button-text-color);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            width: fit-content;
+        }
+
+            .controls > div > a:hover {
+                background-color: var(--c-button-hover-background);
+            }
+
+    /* === Table Styles === */
+    .controls table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid var(--c-border-color);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px var(--c-shadow-color);
+    }
+
+    .controls thead {
+        background-color: var(--c-secondary-color);
+        color: var(--c-text-color);
+        font-weight: bold;
+    }
+
+        .controls thead th {
+            padding: 1rem;
+        }
+
+    .controls tbody {
+        background-color: var(--c-background-alt-color);
+    }
+
+        .controls tbody td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--c-border-color);
+        }
+
+        .controls tbody a {
+            color: var(--c-primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+            .controls tbody a:hover {
+                border-bottom: 2px solid var(--c-primary-color-hover);
+            }
+
+        .controls tbody tr:hover {
+            background-color: var(--c-secondary-color-hover);
+        }
+
+/* === Pop-up Forms (Redesigned) === */
+
+/* Enhanced Pop-up Window Styles */
+.formProduct-create,
+.formProduct-edit,
+.formCategory-create,
+.formCategory-edit {
+    display: none;
+    position: fixed;
+    top: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    max-height: 70%;
+    overflow-y: auto;
+    background-color: var(--c-card-background);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--c-border-color);
+}
+
+    .formProduct-create .content,
+    .formProduct-edit .content,
+    .formCategory-create .content,
+    .formCategory-edit .content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .formProduct-create h2,
+    .formProduct-edit h2,
+    .formCategory-create h2,
+    .formCategory-edit h2 {
+        color: var(--c-primary-color);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+form label {
+    color: var(--c-text-muted-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+form input,
+form select {
+    background-color: var(--c-background-color);
+    border: 1px solid var(--c-border-color);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    color: var(--c-text-color);
+    transition: border-color 0.2s ease;
+}
+
+    form input:focus,
+    form select:focus {
+        border-color: var(--c-primary-color);
+        outline: none;
+    }
+
+form button {
+    background-color: var(--c-button-background);
+    color: var(--c-button-text-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px var(--c-shadow-color);
+}
+
+    form button:hover {
+        background-color: var(--c-button-hover-background);
+        transform: translateY(-2px);
+    }
+
+.formProduct-create a,
+.formProduct-edit a,
+.formCategory-create a,
+.formCategory-edit a {
+    align-self: flex-end;
+    font-size: 1.2rem;
+    color: var(--c-danger-color);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+    .formProduct-create a:hover,
+    .formProduct-edit a:hover,
+    .formCategory-create a:hover,
+    .formCategory-edit a:hover {
+        text-decoration: underline;
+    }
+
+.custom-file-label {
+    padding: 0.75rem;
+    background-color: var(--c-secondary-color);
+    color: var(--c-text-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+    .custom-file-label:hover {
+        background-color: var(--c-secondary-color-hover);
+    }
+
+
+/* === Form Elements === */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formCategory-create form div,
+.formCategory-edit form div,
+.formProduct-create form div,
+.formProduct-edit form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+form label {
+    font-weight: 600;
+    color: var(--c-text-muted-color);
+}
+
+form input,
+form select {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--c-border-color);
+    background-color: var(--c-background-color);
+    color: var(--c-text-color);
+    font-size: 1rem;
+}
+
+    form input:focus,
+    form select:focus {
+        border-color: var(--c-primary-color);
+        outline: none;
+    }
+
+/* === Buttons === */
+form button {
+    background-color: var(--c-button-background);
+    color: var(--c-button-text-color);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px var(--c-shadow-color);
+    align-self: flex-start;
+}
+
+    form button:hover {
+        background-color: var(--c-button-hover-background);
+        transform: translateY(-2px);
+    }
+
+/* === File Upload Custom Label === */
+.custom-file-label {
+    padding: 0.75rem;
+    background-color: var(--c-secondary-color);
+    color: var(--c-text-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+    .custom-file-label:hover {
+        background-color: var(--c-secondary-color-hover);
+    }
