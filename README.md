@@ -122,6 +122,14 @@ The application will launch at `https://localhost:5001`.
 ---
 
 ## 📸 Screenshots
+ ### Home Page
+![home](pics/home.png)
+ ### Product Page
+![productPage](pics/productPage.png)
+### Product Details
+![productDetails](pics/productDetails.png)
+### Admin Panel
+![adminPanel](pics/adminPanel.png)
 
 
 ---
