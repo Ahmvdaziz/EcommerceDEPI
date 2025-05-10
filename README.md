@@ -142,8 +142,8 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🙌 Acknowledgments
 
-* Ahmed Aziz: [Ahmed Aziz](https://github.com/Ahmvdaziz)
-* Eman Tamam: [Eman Tamam]()
-* Esmail
-* Hanna
-* A
+* Ahmed Aziz: [GitHub](https://github.com/Ahmvdaziz) [Linked In](https://www.linkedin.com/in/ahmvd-aziz-285a46281/)
+* Eman Tamam: [GitHub](https://github.com/Eman288) [Linked In](https://www.linkedin.com/in/eman-tamam-47a2a9241/)
+* Esmail Mohamed: [GitHub](https://github.com/esmailelkot74) [Linked In](https://www.linkedin.com/in/esmail-mohamed-elkot/)
+* Hanaa Elsherif: [GitHub]() [Linked In](https://www.linkedin.com/in/hanaa-elsherif/)
+* Osama Ahmed: [GitHub]() [Linked In]()
