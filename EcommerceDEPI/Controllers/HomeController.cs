@@ -1,8 +1,15 @@
-using System.Diagnostics;
-using EcommerceApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authorization;
+using EcommerceDEPI.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
+using EcommerceDEPI.Services.Interfaces;
+using EcommerceDEPI.Data;
+using EcommerceDEPI.Data;
+using EcommerceApp.Models;
+using System.Diagnostics;
+
 
 namespace EcommerceDEPI.Models
 {
@@ -17,7 +24,7 @@ namespace EcommerceDEPI.Models
             _context = context;
         }
 
-        [Authorize]
+        //[Authorize] // put when want to make sure the user is logged in before he/she use this action
         public IActionResult Index(string search)
         {
             var products = _context.Products

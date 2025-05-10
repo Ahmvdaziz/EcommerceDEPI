@@ -3,8 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcommerceDEPI.Models
 {
-    using System.ComponentModel.DataAnnotations.Schema;
-
     public class Order
     {
         [Key]
@@ -17,11 +15,14 @@ namespace EcommerceDEPI.Models
         public string UserId { get; set; }
         public User User { get; set; }
 
+        public string OrderStatus { get; set; } = "Pending"; 
+
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
         public ICollection<Discount> Discounts { get; set; } = new List<Discount>();
         public ICollection<OrderDiscount> OrderDiscounts { get; set; } = new List<OrderDiscount>();
         public Shipment Shipment { get; set; }
         public Payment Payment { get; set; }
-    }
 
+        public ICollection<Review> Reviews { get; set; } = new List<Review>(); // العلاقة مع التقييمات
+    }
 }

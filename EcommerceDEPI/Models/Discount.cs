@@ -16,6 +16,7 @@ namespace EcommerceDEPI.Models
 
         public ICollection<Order> Orders { get; set; } = new List<Order>();
         public ICollection<OrderDiscount> OrderDiscounts { get; set; } = new List<OrderDiscount>();
-
+        public bool IsActive { get; internal set; }
+        public int Percentage { get; internal set; }
     }
 }

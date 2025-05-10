@@ -1,11 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
     var cats = ViewData["cats"] as List<string>;
 
@@ -47,7 +40,19 @@
 <div class="form">
 
 
-    <form asp-controller="Product" asp-action="Edit" method="post">
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        
+        <div class="form-group">
+            <label>Upload New Picture</label>
+            <input type="file" class="form-control" name="imageFile" accept="image/*" />
+        </div>
+        @if (!string.IsNullOrEmpty(Model.Picture))
+
+        {
+            <div class="form-group">
+                <img src="~/images/@Model.Picture" alt="Product Image" style="max-height: 150px;" />
+            </div>
+        }
         <div>
             <label for="name">Name</label>
             <input type="text" required id="name" name="name" value="@Model.Name" />

@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 namespace EcommerceDEPI.Models
 {
-    using System.ComponentModel.DataAnnotations.Schema;
-
     public class Product
     {
         public int Id { get; set; }
@@ -18,11 +17,7 @@ namespace EcommerceDEPI.Models
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
         public ICollection<ProductLog> ProductLogs { get; set; } = new List<ProductLog>();
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
-        public ICollection<Cart> Carts { get; set; } = new List<Cart>();
-        public ICollection<Wishlist> Wishlists { get; set; } = new List<Wishlist>();
         public ICollection<WishlistProduct> WishlistProducts { get; set; } = new List<WishlistProduct>();
         public ICollection<CartProduct> CartProducts { get; set; } = new List<CartProduct>();
-
-
     }
 }
